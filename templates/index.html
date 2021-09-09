@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Choose from below {% endblock %}</h1>
+
+<form method="post">
+    {% for c in choices %}
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="vote" value="{{ c }}">
+        <label class="form-check-label">
+            {{ c }}
+        </label>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
